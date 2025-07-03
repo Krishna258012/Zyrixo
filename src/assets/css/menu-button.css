@@ -1,0 +1,125 @@
+.menu__button {
+    display: none;
+}
+
+.menu__button .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.menu-label {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu__button .switch {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu__button .wrapper {
+    width: 25px;
+    /* Smaller wrapper */
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.menu__button .row {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.menu__button .row-bottom {
+    align-items: flex-end;
+}
+
+.menu__button .dot {
+    width: 5px;
+    height: 5px;
+    border: 1.5px solid #000000;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.menu__button .row-horizontal {
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.menu__button .row-vertical {
+    position: absolute;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.menu__button .switch:hover .wrapper .row-horizontal {
+    width: 60px;
+}
+
+.menu__button .switch:hover .wrapper .row-vertical {
+    height: 60px;
+}
+
+.menu__button .switch:hover .wrapper .row-vertical .middle-dot {
+    border-radius: 3px;
+    height: 20px;
+}
+
+.menu__button .switch:hover .wrapper .row-horizontal .middle-dot-horizontal {
+    border-radius: 3px;
+    width: 20px;
+}
+
+.menu__button .switch input:checked+.wrapper {
+    transform: rotate(45deg) scale(1.1);
+}
+
+.menu__button .switch input:checked+.wrapper .row-vertical {
+    height: 60px;
+}
+
+.menu__button .switch input:checked+.wrapper .row-horizontal {
+    width: 60px;
+}
+
+.menu__button .switch input:checked+.wrapper .row-vertical .middle-dot {
+    height: 20px;
+}
+
+.menu__button .switch input:checked+.wrapper .row-horizontal .middle-dot-horizontal {
+    width: 20px;
+}
+
+@media (max-width:775px) {
+    .menu__button {
+        display: block;
+    }
+}
