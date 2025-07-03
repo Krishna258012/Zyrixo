@@ -1,4 +1,4 @@
-import Script from "next/script";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 import { Montserrat, Libre_Franklin } from "next/font/google";
 
@@ -33,19 +33,7 @@ export default function RootLayout({ children }) {
          <body
             className={`${montserrat.variable} ${main_font.variable} antialiased`}
          >
-            <Script
-               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-               strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-               {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
-    `}
-            </Script>
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
             {children}
          </body>
 
